@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zendesk.Ticket.Viewer.Host", "Zendesk.Ticket.Viewer.Host\Zendesk.Ticket.Viewer.Host.csproj", "{EE00CACF-200A-4251-BDB5-80EC1116B65F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zendesk.Ticket.Viewer.Service", "Zendesk.Ticket.Viewer.Service\Zendesk.Ticket.Viewer.Service.csproj", "{FF9904BE-C872-412C-A240-8E2F6A7005B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zendesk.Ticket.Viewer.Domain", "Zendesk.Ticket.Viewer.Domain\Zendesk.Ticket.Viewer.Domain.csproj", "{7773D012-C7E2-49B1-9B9F-A3367600892C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE00CACF-200A-4251-BDB5-80EC1116B65F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE00CACF-200A-4251-BDB5-80EC1116B65F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE00CACF-200A-4251-BDB5-80EC1116B65F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE00CACF-200A-4251-BDB5-80EC1116B65F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF9904BE-C872-412C-A240-8E2F6A7005B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF9904BE-C872-412C-A240-8E2F6A7005B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF9904BE-C872-412C-A240-8E2F6A7005B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF9904BE-C872-412C-A240-8E2F6A7005B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7773D012-C7E2-49B1-9B9F-A3367600892C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7773D012-C7E2-49B1-9B9F-A3367600892C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7773D012-C7E2-49B1-9B9F-A3367600892C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7773D012-C7E2-49B1-9B9F-A3367600892C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47728EAE-361E-4D28-B4B9-DED24965A3F0}
+	EndGlobalSection
+EndGlobal

@@ -12,12 +12,15 @@
     <None Remove="Microsoft.Extensions.Primitives" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
+    <Folder Include="Models\" />
     <Folder Include="Contracts\" />
     <Folder Include="Translator\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Primitives" Version="6.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Zendesk.Ticket.Viewer.Data\Zendesk.Ticket.Viewer.Data.csproj" />
   </ItemGroup>
 </Project>

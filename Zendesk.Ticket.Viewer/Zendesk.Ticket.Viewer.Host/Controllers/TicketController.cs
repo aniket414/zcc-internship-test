@@ -23,12 +23,12 @@ namespace Zendesk.Ticket.Viewer.Host
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync(string applicationId)
+        public async Task<IActionResult> GetAllAsync()
         {
             var queryString = Request.QueryString.Value;
             var pagingInfoRequest = new PagingInfoRequest(queryString);
 
-            var response = await _ticketService.GetAllTicketsAsync(applicationId, pagingInfoRequest.PageNumber, pagingInfoRequest.PageSize);
+            var response = await _ticketService.GetAllTicketsAsync(pagingInfoRequest.PageNumber, pagingInfoRequest.PageSize);
             return Ok(response.ToDataContract(pagingInfoRequest));
         }
     }

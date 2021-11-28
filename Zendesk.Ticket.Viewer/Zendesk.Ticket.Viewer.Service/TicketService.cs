@@ -11,7 +11,7 @@ namespace Zendesk.Ticket.Viewer.Service
 
         public async Task<PagedList<Ticket>> GetAllTicketsAsync(string applicationId, int pageNumber, int pageSize)
         {
-            
+            return null;
         }
     }
 }

@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <ProjectGuid>{FF9904BE-C872-412C-A240-8E2F6A7005B3}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <RootNamespace>Zendesk.Ticket.Viewer.Service</RootNamespace>
+    <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Compile Include="TicketService.cs" />
+    <None Remove="Management\" />
+    <None Remove="Contracts\" />
+    <None Remove="Translator\" />
+    <None Remove="Microsoft.AspNetCore.WebUtilities" />
+    <None Remove="Microsoft.Extensions.Primitives" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="Contracts\" />
+    <Folder Include="Translator\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Primitives" Version="6.0.0" />
+  </ItemGroup>
 </Project>

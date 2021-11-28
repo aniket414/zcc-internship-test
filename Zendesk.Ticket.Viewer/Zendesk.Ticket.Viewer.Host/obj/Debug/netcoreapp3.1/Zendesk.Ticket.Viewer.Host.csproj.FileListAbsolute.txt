@@ -1,6 +1,0 @@
-/Users/aniket/zcc-internship-test/Zendesk.Ticket.Viewer/Zendesk.Ticket.Viewer.Host/obj/Debug/netcoreapp3.1/Zendesk.Ticket.Viewer.Host.csproj.AssemblyReference.cache
-/Users/aniket/zcc-internship-test/Zendesk.Ticket.Viewer/Zendesk.Ticket.Viewer.Host/obj/Debug/netcoreapp3.1/Zendesk.Ticket.Viewer.Host.GeneratedMSBuildEditorConfig.editorconfig
-/Users/aniket/zcc-internship-test/Zendesk.Ticket.Viewer/Zendesk.Ticket.Viewer.Host/obj/Debug/netcoreapp3.1/Zendesk.Ticket.Viewer.Host.AssemblyInfoInputs.cache
-/Users/aniket/zcc-internship-test/Zendesk.Ticket.Viewer/Zendesk.Ticket.Viewer.Host/obj/Debug/netcoreapp3.1/Zendesk.Ticket.Viewer.Host.AssemblyInfo.cs
-/Users/aniket/zcc-internship-test/Zendesk.Ticket.Viewer/Zendesk.Ticket.Viewer.Host/obj/Debug/netcoreapp3.1/Zendesk.Ticket.Viewer.Host.csproj.CoreCompileInputs.cache
-/Users/aniket/zcc-internship-test/Zendesk.Ticket.Viewer/Zendesk.Ticket.Viewer.Host/obj/Debug/netcoreapp3.1/Zendesk.Ticket.Viewer.Host.MvcApplicationPartsAssemblyInfo.cache

@@ -4,36 +4,32 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Zendesk.Ticket.Viewer.Service;
 
-namespace Zendesk.Ticket.Viewer.Host.Controllers
+namespace Zendesk.Ticket.Viewer.Host
 {
     [ApiController]
     [Route("[controller]")]
     public class TicketController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
+        private readonly ITicketService _ticketService;
+        
         private readonly ILogger<TicketController> _logger;
 
-        public TicketController(ILogger<TicketController> logger)
+        public TicketController(ITicketService ticketService, ILogger<TicketController> logger)
         {
+            _ticketService = ticketService;
             _logger = logger;
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public async Task<IActionResult> GetAllAsync(string applicationId)
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            var queryString = Request.QueryString.Value;
+            var pagingInfoRequest = new PagingInfoRequest(queryString);
+
+            var response = await _ticketService.GetAllTicketsAsync(applicationId, pagingInfoRequest.PageNumber, pagingInfoRequest.PageSize);
+            return Ok(response.ToDataContract(pagingInfoRequest));
         }
     }
 }

@@ -5,4 +5,9 @@
   </PropertyGroup>
 
 
+  <ItemGroup>
+    <ProjectReference Include="..\Zendesk.Ticket.Viewer.Service\Zendesk.Ticket.Viewer.Service.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

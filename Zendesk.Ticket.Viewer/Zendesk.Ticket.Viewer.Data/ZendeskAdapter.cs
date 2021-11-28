@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Zendesk.Ticket.Viewer.Domain;
 
 namespace Zendesk.Ticket.Viewer.Data
 {
@@ -13,8 +14,9 @@ namespace Zendesk.Ticket.Viewer.Data
         private readonly string _authToken = "token";
         private readonly string _baseUrl = "https://zccinternshiptest.zendesk.com/";
 
-        public async Task<List<TicketResponse>> GetTicketsAsync()
+        public async Task<List<Domain.Ticket>> GetTicketsAsync()
         {
+            var listOfTickets = new List<Domain.Ticket>();
             try
             {
                 var getTicketsURL = $"{_baseUrl}api/v2/tickets";
@@ -27,13 +29,16 @@ namespace Zendesk.Ticket.Viewer.Data
                 else
                 {
                     var ticketResponse = JsonConvert.DeserializeObject<TicketResponse>(result);
-                    if (ticketResponse != null && ticketResponse.tickets.Count > 1)
+                    if (ticketResponse != null && ticketResponse.tickets.Count > 0)
                     {
-                        return null;
+                        foreach (var tickets in ticketResponse.tickets)
+                        {
+                            listOfTickets.Add(tickets.ToDomainModel());
+                        }
                     }
                 }
 
-                return null;
+                return listOfTickets;
             }
             catch (Exception ex)
             {

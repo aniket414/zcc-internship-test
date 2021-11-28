@@ -1,10 +1,12 @@
 ﻿using System;
+using Zendesk.Ticket.Viewer.Domain;
+
 namespace Zendesk.Ticket.Viewer.Service
 {
     public static class GetAllTicketsTranslator
     {
         private static readonly int _noRecords = 0;
-        public static GetAllTicketsResponse ToDataContract(this PagedList<Ticket> tickets, PagingInfoRequest pagingInfoRequest)
+        public static GetAllTicketsResponse ToDataContract(this PagedList<Domain.Ticket> tickets, PagingInfoRequest pagingInfoRequest)
         {
             if (tickets == null || tickets.Count == 0)
             {

@@ -3,7 +3,7 @@ namespace Zendesk.Ticket.Viewer.Service
 {
     public static class GetTicketsResponseTranslator
     {
-        public static GetTicketResponse ToGetTicketsDataContract(this Ticket ticket)
+        public static GetTicketResponse ToGetTicketsDataContract(this Domain.Ticket ticket)
         {
             if (ticket == null)
                 return null;

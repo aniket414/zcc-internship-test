@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Zendesk.Ticket.Viewer.Data
+namespace Zendesk.Ticket.Viewer.Domain
 {
     public interface IDataAdapter
     {
-        Task<List<TicketResponse>> GetTicketsAsync();
+        Task<List<Ticket>> GetTicketsAsync();
     }
 }

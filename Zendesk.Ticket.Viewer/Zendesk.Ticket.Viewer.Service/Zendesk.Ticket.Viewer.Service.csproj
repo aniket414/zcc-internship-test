@@ -12,7 +12,6 @@
     <None Remove="Microsoft.Extensions.Primitives" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Contracts\" />
     <Folder Include="Translator\" />
   </ItemGroup>
@@ -21,6 +20,6 @@
     <PackageReference Include="Microsoft.Extensions.Primitives" Version="6.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Zendesk.Ticket.Viewer.Data\Zendesk.Ticket.Viewer.Data.csproj" />
+    <ProjectReference Include="..\Zendesk.Ticket.Viewer.Domain\Zendesk.Ticket.Viewer.Domain.csproj" />
   </ItemGroup>
 </Project>

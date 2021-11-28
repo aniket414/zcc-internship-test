@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Zendesk.Ticket.Viewer.Data;
+using Zendesk.Ticket.Viewer.Domain;
 
 namespace Zendesk.Ticket.Viewer.Service
 {
@@ -12,7 +12,7 @@ namespace Zendesk.Ticket.Viewer.Service
             _dataAdapter = dataAdapter;
         }
 
-        public async Task<PagedList<Ticket>> GetAllTicketsAsync(int pageNumber, int pageSize)
+        public async Task<PagedList<Domain.Ticket>> GetAllTicketsAsync(int pageNumber, int pageSize)
         {
             var response = await _dataAdapter.GetTicketsAsync();
             return null;

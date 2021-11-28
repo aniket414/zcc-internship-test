@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Zendesk.Ticket.Viewer.Service
+namespace Zendesk.Ticket.Viewer.Domain
 {
     public class Ticket
     {

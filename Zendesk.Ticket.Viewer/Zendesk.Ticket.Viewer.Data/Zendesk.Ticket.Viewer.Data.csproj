@@ -7,11 +7,16 @@
   <ItemGroup>
     <None Remove="DataContracts\" />
     <None Remove="Newtonsoft.Json" />
+    <None Remove="DataTranslators\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataContracts\" />
+    <Folder Include="DataTranslators\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Zendesk.Ticket.Viewer.Domain\Zendesk.Ticket.Viewer.Domain.csproj" />
   </ItemGroup>
 </Project>

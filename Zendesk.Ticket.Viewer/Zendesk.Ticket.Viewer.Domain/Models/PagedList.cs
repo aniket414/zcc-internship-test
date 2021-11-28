@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Zendesk.Ticket.Viewer.Service
+namespace Zendesk.Ticket.Viewer.Domain
 {
     public class PagedList<T> : List<T>
     {

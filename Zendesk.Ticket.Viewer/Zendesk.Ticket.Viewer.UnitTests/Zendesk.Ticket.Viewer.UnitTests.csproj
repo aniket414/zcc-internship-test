@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="xunit" Version="2.4.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
+    <PackageReference Include="coverlet.collector" Version="1.2.0" />
+    <PackageReference Include="Moq" Version="4.16.1" />
+    <PackageReference Include="FluentAssertions" Version="6.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Internals\" />
+    <None Remove="Internals\MockBuilder\" />
+    <None Remove="Moq" />
+    <None Remove="Internals\TestEntityBuilder\" />
+    <None Remove="FluentAssertions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Internals\" />
+    <Folder Include="Internals\MockBuilder\" />
+    <Folder Include="Internals\TestEntityBuilder\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Zendesk.Ticket.Viewer.Data\Zendesk.Ticket.Viewer.Data.csproj" />
+    <ProjectReference Include="..\Zendesk.Ticket.Viewer.Service\Zendesk.Ticket.Viewer.Service.csproj" />
+    <ProjectReference Include="..\Zendesk.Ticket.Viewer.Domain\Zendesk.Ticket.Viewer.Domain.csproj" />
+  </ItemGroup>
+</Project>

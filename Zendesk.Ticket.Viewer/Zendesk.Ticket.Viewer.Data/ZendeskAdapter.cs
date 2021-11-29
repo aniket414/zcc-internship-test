@@ -9,6 +9,13 @@ namespace Zendesk.Ticket.Viewer.Data
 {
     public class ZendeskAdapter : IDataAdapter
     {
+        /// <summary>
+        /// Email, Token and URL is hard coded here
+        /// However
+        /// We should store them in encrypted form in Configuration Store such as Consul [consul.io]
+        /// Or
+        /// We can also store them in AWS Parameter Store and fetch from there.
+        /// </summary>
         private readonly static string _email = "email";
         private readonly string _authUsername = $"{_email}/token";
         private readonly string _authToken = "token";

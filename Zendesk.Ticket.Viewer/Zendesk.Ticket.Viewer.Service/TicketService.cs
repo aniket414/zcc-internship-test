@@ -29,6 +29,16 @@ namespace Zendesk.Ticket.Viewer.Service
             return pagedRoles;
         }
 
+        public async Task<Domain.Ticket> GetTicketAsync(string ticketId)
+        {
+            var ticket = await _dataAdapter.GetTicketAsync(ticketId);
+
+            if (ticket == null)
+                return null;
+
+            return ticket;
+        }
+
         private static PagedList<Domain.Ticket> GetRolesAccordingToPaging(List<Domain.Ticket> tickets, int pageNumber, int pageSize)
         {
             PagedList<Domain.Ticket> selectedRoles = new PagedList<Domain.Ticket>();

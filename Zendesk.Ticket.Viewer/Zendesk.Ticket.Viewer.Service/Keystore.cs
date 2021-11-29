@@ -9,12 +9,12 @@ namespace Zendesk.Ticket.Viewer.Service
             public static readonly string PageSize = "pageSize";
 
             public static readonly int PageNumberLowerLimit = 1;
-            public static readonly int PageNumberUpperLimit = 20;
+            public static readonly int PageNumberUpperLimit = 25;
             public static readonly int PageSizeLowerLimit = 1;
             public static readonly int PageSizeUpperLimit = 100;
 
             public static readonly int PageNumberDefaultValue = 1;
-            public static readonly int PageSizeDefaultValue = 20;
+            public static readonly int PageSizeDefaultValue = 25;
         }
     }
 }

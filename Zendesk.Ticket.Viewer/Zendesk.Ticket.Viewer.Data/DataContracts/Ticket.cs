@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Zendesk.Ticket.Viewer.Data
 {
-    public class Tickets
+    public class Ticket
     {
         public string url { get; set; }
         public int? id { get; set; }
@@ -42,8 +42,8 @@ namespace Zendesk.Ticket.Viewer.Data
         public bool allow_attachments { get; set; }
     }
 
-    public class TicketsResponse
+    public class TicketResponse
     {
-        public List<Tickets> tickets { get; set; }
+        public Ticket ticket { get; set; }
     }
 }

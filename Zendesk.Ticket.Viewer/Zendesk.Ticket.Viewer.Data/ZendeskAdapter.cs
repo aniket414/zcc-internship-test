@@ -16,9 +16,9 @@ namespace Zendesk.Ticket.Viewer.Data
         /// Or
         /// We can also store them in AWS Parameter Store and fetch from there.
         /// </summary>
-        private readonly static string _email = "email";
+        private readonly static string _email = "aniket414@gmail.com";
         private readonly string _authUsername = $"{_email}/token";
-        private readonly string _authToken = "token";
+        private readonly string _authToken = "aWF52RKH1zsONVtbK37ckIVDVoFV3bpugyhVyLHM";
         private readonly string _baseUrl = "https://zccinternshiptest.zendesk.com/";
 
         public async Task<List<Domain.Ticket>> GetTicketsAsync()

@@ -17,16 +17,16 @@ namespace Zendesk.Ticket.Viewer.Service
         public string Priority { get; set; }
         public string Status { get; set; }
         public string Recipient { get; set; }
-        public int? RequesterId { get; set; }
-        public int? SubmitterId { get; set; }
-        public int? AssigneeId { get; set; }
-        public int? OrganizationId { get; set; }
-        public int? GroupId { get; set; }
+        public string RequesterId { get; set; }
+        public string SubmitterId { get; set; }
+        public string AssigneeId { get; set; }
+        public string OrganizationId { get; set; }
+        public string GroupId { get; set; }
         public List<string> CollaboratorIds { get; } = new List<string>();
         public List<string> FollowerIds { get; } = new List<string>();
         public List<string> EmailCCIds { get; } = new List<string>();
-        public int? ForumTopicId { get; set; }
-        public int? ProblemId { get; set; }
+        public string ForumTopicId { get; set; }
+        public string ProblemId { get; set; }
         public bool HasIncidents { get; set; }
         public bool IsPublic { get; set; }
         public string DueAt { get; set; }
@@ -36,8 +36,8 @@ namespace Zendesk.Ticket.Viewer.Service
         public List<string> Fields { get; } = new List<string>();
         public List<string> FollowupIds { get; } = new List<string>();
         public string SatisfactionRating { get; set; }
-        public int? TicketFormId { get; set; }
-        public int? BrandId { get; set; }
+        public string TicketFormId { get; set; }
+        public string BrandId { get; set; }
         public bool AllowChannelBack { get; set; }
         public bool AllowAttachments { get; set; }
     }

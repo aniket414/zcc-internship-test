@@ -29,7 +29,7 @@ namespace Zendesk.Ticket.Viewer
         private static async Task<string> ExecuteAsync(HttpMethod method, string url, string username, string password, string jsonContent)
         {
             var request = new HttpRequestMessage(method, url);
-            request.Headers.Add("Content-Type", "application/json");
+            request.Headers.Add("Accept", "application/json");
 
             StringContent stringContent;
             if (jsonContent != null)

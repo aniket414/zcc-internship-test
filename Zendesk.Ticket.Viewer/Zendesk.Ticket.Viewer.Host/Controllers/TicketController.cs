@@ -9,7 +9,7 @@ using Zendesk.Ticket.Viewer.Service;
 namespace Zendesk.Ticket.Viewer.Host
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v1.0")]
     public class TicketController : ControllerBase
     {
         private readonly ITicketService _ticketService;
@@ -23,6 +23,7 @@ namespace Zendesk.Ticket.Viewer.Host
         }
 
         [HttpGet]
+        [Route("tickets")]
         public async Task<IActionResult> GetAllAsync()
         {
             var queryString = Request.QueryString.Value;

@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Zendesk.Ticket.Viewer.Data;
+using Zendesk.Ticket.Viewer.Domain;
+using Zendesk.Ticket.Viewer.Service;
 
 namespace Zendesk.Ticket.Viewer.Host
 {
@@ -26,6 +29,12 @@ namespace Zendesk.Ticket.Viewer.Host
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddSingleton<ITicketService, TicketService>();
+            services.AddSingleton(typeof(ITicketService), typeof(TicketService));
+
+            services.AddSingleton<IDataAdapter, ZendeskAdapter>();
+            services.AddSingleton(typeof(IDataAdapter), typeof(ZendeskAdapter));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

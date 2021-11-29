@@ -12,5 +12,8 @@
     <ProjectReference Include="..\Zendesk.Ticket.Viewer.Domain\Zendesk.Ticket.Viewer.Domain.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\Zendesk.Ticket.Viewer.Data\Zendesk.Ticket.Viewer.Data.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 </Project>

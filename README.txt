@@ -8,3 +8,5 @@ Steps to run the code:
 5. Next to the build command there will be Run command using which we can host our API.
 
 The API Request and Response documentation is present in Zendesk_Ticket_Viewer_Documentation.pdf
+
+The project also has integrated github actions to automatically run unit tests every time a new commit is made to the repository.

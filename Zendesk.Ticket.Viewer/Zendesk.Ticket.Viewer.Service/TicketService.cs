@@ -31,6 +31,11 @@ namespace Zendesk.Ticket.Viewer.Service
 
         public async Task<Domain.Ticket> GetTicketAsync(string ticketId)
         {
+            if(string.IsNullOrEmpty(ticketId))
+            {
+                throw new ArgumentNullException("Id");
+            }
+
             var ticket = await _dataAdapter.GetTicketAsync(ticketId);
 
             if (ticket == null)

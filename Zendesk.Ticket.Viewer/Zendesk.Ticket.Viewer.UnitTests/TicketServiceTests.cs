@@ -91,5 +91,97 @@ namespace Zendesk.Ticket.Viewer.UnitTests
             //verify
             zendeskDataStore.VerifyGetTicketsAsync(Times.Once);
         }
+
+        [Fact]
+        public void Given_GetTicketByIdRequest_When_DataLayer_ThrowsExceptions_Then_ShouldThrowError()
+        {
+            //build
+            var zendeskDataStore = MockBuilder.MockDataAdapter()
+                .MockGetTicketAsync(new Exception());
+
+            var service = ObjectBuilder.TicketServiceBuilder()
+                .SetDataStore(zendeskDataStore)
+                .Build();
+
+            //act
+            Func<Task> response = async () => await service.GetTicketAsync("mockId");
+
+            //assert
+            response.Should().ThrowAsync<Exception>();
+
+            //verify
+            zendeskDataStore.VerifyGetTicketAsync(Times.Once);
+        }
+
+        [Fact]
+        public async Task Given_GetTicketByIdRequest_When_Ticket_DoesNotExist_Then_ShouldReturnNull()
+        {
+            //build
+            Domain.Ticket output = null;
+            var zendeskDataStore = MockBuilder.MockDataAdapter()
+                .MockGetTicketAsync(output);
+
+            var service = ObjectBuilder.TicketServiceBuilder()
+                .SetDataStore(zendeskDataStore)
+                .Build();
+
+            //act
+            var response = await service.GetTicketAsync("mockId");
+
+            //assert
+            response.Should().BeNull();
+
+            //verify
+            zendeskDataStore.VerifyGetTicketAsync(Times.Once);
+        }
+
+        [Fact]
+        public async Task Given_GetTicketByIdRequest_When_Ticket_Exist_Then_ShouldReturnTicket()
+        {
+            //build
+            var ticket = ObjectBuilder.TicketBuilder()
+                .SetId(414)
+                .SetURL("url.com")
+                .Build();
+
+            var zendeskDataStore = MockBuilder.MockDataAdapter()
+                .MockGetTicketAsync(ticket);
+
+            var service = ObjectBuilder.TicketServiceBuilder()
+                .SetDataStore(zendeskDataStore)
+                .Build();
+
+            //act
+            var response = await service.GetTicketAsync("414");
+
+            //assert
+            response.Should().NotBeNull();
+            response.Id.Should().Be(414);
+            response.URL.Should().Be("url.com");
+
+            //verify
+            zendeskDataStore.VerifyGetTicketAsync(Times.Once);
+        }
+
+        [Fact]
+        public void Given_GetTicketByIdRequest_When_TicketId_IsNull_Then_ShouldThrowError()
+        {
+            //build
+            var ticket = ObjectBuilder.TicketBuilder().Build();
+
+            var zendeskDataStore = MockBuilder.MockDataAdapter()
+                .MockGetTicketAsync(ticket);
+
+            var service = ObjectBuilder.TicketServiceBuilder().Build();
+
+            //act
+            Func<Task> response = async () => await service.GetTicketAsync(null);
+
+            //assert
+            response.Should().ThrowAsync<ArgumentNullException>().WithMessage("Id");
+
+            //verify
+            zendeskDataStore.VerifyGetTicketAsync(Times.Never);
+        }
     }
 }

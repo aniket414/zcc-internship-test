@@ -7,4 +7,4 @@ Steps to run the code:
 4. Build the solution [This will restore all the dependancies]. The option to Build the solution will be present on the menu bar
 5. Next to the build command there will be Run command using which we can host our API.
 
-The API Request and Response documentation is present in Report.pdf
+The API Request and Response documentation is present in Zendesk_Ticket _Viewer_Documentation.pdf

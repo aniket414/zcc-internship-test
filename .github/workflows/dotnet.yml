@@ -22,5 +22,7 @@ jobs:
       working-directory: Zendesk.Ticket.Viewer
     - name: Build
       run: dotnet build --no-restore
+      working-directory: Zendesk.Ticket.Viewer
     - name: Test
       run: dotnet test --no-build --verbosity normal
+      working-directory: Zendesk.Ticket.Viewer

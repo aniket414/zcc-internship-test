@@ -1,6 +1,9 @@
+# Zendesk Ticket Viewer
+------------------------
 The internship project is done using dot net core 3.1
 
 Steps to run the code:
+
 1. Clone the repository to your machine
 2. Make sure you have Visual Studio 2019/2017 installed on your machine
 3. Open the solution [.sln] file in Visual Studio; Location: [zcc-internship-test/Zendesk.Ticket.Viewer/Zendesk.Ticket.Viewer.sln]

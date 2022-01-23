@@ -1,5 +1,5 @@
 # Zendesk Ticket Viewer
-------------------------
+
 The internship project is done using dot net core 3.1
 
 Steps to run the code:

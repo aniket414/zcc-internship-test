@@ -23,10 +23,10 @@ namespace Zendesk.Ticket.Viewer.Service
 
             var totalRecords = tickets.Count;
 
-            var pagedRoles = GetRolesAccordingToPaging(tickets, pageNumber, pageSize);
-            pagedRoles.TotalRecords = totalRecords;
+            var pagedTickets = GetTicketsAccordingToPaging(tickets, pageNumber, pageSize);
+            pagedTickets.TotalRecords = totalRecords;
 
-            return pagedRoles;
+            return pagedTickets;
         }
 
         public async Task<Domain.Ticket> GetTicketAsync(string ticketId)
@@ -44,14 +44,14 @@ namespace Zendesk.Ticket.Viewer.Service
             return ticket;
         }
 
-        private static PagedList<Domain.Ticket> GetRolesAccordingToPaging(List<Domain.Ticket> tickets, int pageNumber, int pageSize)
+        private static PagedList<Domain.Ticket> GetTicketsAccordingToPaging(List<Domain.Ticket> tickets, int pageNumber, int pageSize)
         {
-            PagedList<Domain.Ticket> selectedRoles = new PagedList<Domain.Ticket>();
+            PagedList<Domain.Ticket> selectedTickets = new PagedList<Domain.Ticket>();
 
             var skipTickets = (pageNumber - 1) * pageSize;
-            selectedRoles.AddRange(tickets.Skip(skipTickets).Take(pageSize).ToList());
+            selectedTickets.AddRange(tickets.Skip(skipTickets).Take(pageSize).ToList());
 
-            return selectedRoles;
+            return selectedTickets;
         }
     }
 }
